@@ -1,0 +1,3 @@
+# Embedded SvelteKit Static SPA with Uniform-Row Virtualized Gallery
+
+Arkive must run with zero Node.js server overhead on a low-spec host (Intel Pentium E5400) while providing an instant, 60fps mobile gallery experience without exceeding mobile browser memory limits. We decided to build the frontend as a static SvelteKit SPA using `@sveltejs/adapter-static` (`fallback: 'index.html'`, `precompress: true`), embedded directly into the Go binary via `//go:embed all:build`. The mobile gallery is powered by an O(1) mathematical uniform-row virtual grid that renders only ~40–60 DOM nodes (<25MB client RAM) regardless of album size, backed by a 500-entry FIFO Service Worker Preview Cache that protects backend drive spin-down while preventing mobile device storage exhaustion.
