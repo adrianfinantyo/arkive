@@ -37,5 +37,5 @@ A temporary holding area for soft-deleted media and albums, retained for a confi
 _Avoid_: Recycle bin, archive holding
 
 **Permanent Deletion**:
-The irreversible destruction of a media object, atomically cascading across the SQLite metadata, the Raw Media Store on `/mnt/storage`, and the Preview Cache on SSD.
+The irreversible destruction of a media object, atomically cascading across the database metadata, the Raw Media Store on `/mnt/storage`, and the Preview Cache on SSD.
 _Avoid_: Hard purge, shred, obliterate
