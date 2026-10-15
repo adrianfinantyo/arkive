@@ -1,0 +1,3 @@
+# Monorepo with Separate Server and Worker Deployments
+
+To balance developer ergonomics with production resource isolation on low-spec hardware, Arkive is organized as a single monorepo housing both the Go backend services and the SvelteKit frontend. The Go application compiles into two distinct binaries via separate entrypoints: `cmd/server` (`arkive-server`: web, Chi API, streaming uploads, embedded PWA) and `cmd/worker` (`arkive-worker`: Asynq task consumer with `vipsthumbnail` and `ffmpeg`). Separate Dockerfiles (`Dockerfile.server` and `Dockerfile.worker`) allow independent container packaging, resource quotas (`cpus: 1`, `mem_limit: 384m`), and toggling via Docker Compose profiles.

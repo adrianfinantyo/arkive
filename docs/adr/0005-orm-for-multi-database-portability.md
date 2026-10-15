@@ -1,0 +1,3 @@
+# ORM for Multi-Database Portability and Open-Closed Repository Design
+
+Arkive is designed as an extensible open-source project that may deploy against PostgreSQL, SQLite, or other relational databases without rewriting core business logic. We decided to use GORM (`gorm.io/gorm`) encapsulated behind domain repository interfaces (`internal/domain/`). This satisfies the Open-Closed Principle (OCP): domain services depend strictly on repository interfaces, while GORM handles multi-dialect schema migrations, dialect-agnostic CRUD operations, and built-in soft-delete lifecycle hooks (`gorm.DeletedAt` for the Trash Bin) across different database backends.
