@@ -14,6 +14,9 @@ A complete technical specification and architecture blueprint for **Arkive**, de
 
 <!-- the index: one line per closed ticket, enough to judge relevance, then zoom the link for the detail the ticket holds -->
 
+- [[01] Backend Runtime & Framework Evaluation](file:///home/adrian/adrian-dev/arkive/.scratch/arkive/issues/01-backend-runtime-evaluation.md): Reject PocketBase due to 32MB upload RAM buffering, SSD /tmp spillover, and WAL telemetry that defeats HDD spin-down; build a bespoke Go service using Chi v5 and `mattn/go-sqlite3` for an 8–14MB idle footprint and 0-RAM streaming direct to `/mnt/storage`.
+- [[02] Low-Resource Media Processing Pipeline](file:///home/adrian/adrian-dev/arkive/.scratch/arkive/issues/02-low-resource-media-pipeline.md): Adopt isolated CLI subprocesses (`vipsthumbnail` + fast-seek `ffmpeg`) bound to Core 1 (`nice -n 19`, `ionice -c 3`, `prlimit 512MB`) with eager-on-upload processing to keep Go heap <25MB and protect HDD spin-down.
+
 ## Not yet specified
 
 - **Job Queue & Background Worker Architecture**: SQLite-backed persistent queue for thumbnail generation, drive health checks, and scheduled backups with strict concurrency limits (single worker on 2-core CPU).

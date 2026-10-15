@@ -1,0 +1,3 @@
+# Bespoke Go Service with Chi and mattn/go-sqlite3 over PocketBase
+
+Arkive requires an idle RAM footprint under 100MB, zero SSD wear during multi-gigabyte video uploads, and strict isolation of mechanical drives for drive spin-down on low-spec hardware (Intel Pentium E5400, 3.8GB RAM). We decided to build a bespoke Go service using `go-chi/chi/v5` and `mattn/go-sqlite3` instead of adopting PocketBase. PocketBase buffers uploads using `ParseMultipartForm(32MB)` which spills to `/tmp` on SSD, idles at 25-35MB with peaks approaching 85MB, uses a pure-Go SQLite driver that causes GC thrashing on 2-core CPUs, and writes continuous WAL telemetry that prevents HDD spin-down.
