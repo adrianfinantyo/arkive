@@ -31,3 +31,11 @@ _Avoid_: Public URL, share token
 **Drive Spin-Down**:
 Operating state where the secondary storage drive enters low-power sleep during idle periods, insulated from requests by the Preview Cache.
 _Avoid_: Disk hibernate, standby mode
+
+**Trash Bin**:
+A temporary holding area for soft-deleted media and albums, retained for a configured duration ($X$ days) prior to irrevocable destruction.
+_Avoid_: Recycle bin, archive holding
+
+**Permanent Deletion**:
+The irreversible destruction of a media object, atomically cascading across the SQLite metadata, the Raw Media Store on `/mnt/storage`, and the Preview Cache on SSD.
+_Avoid_: Hard purge, shred, obliterate
