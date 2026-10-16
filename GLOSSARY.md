@@ -16,6 +16,10 @@ _Avoid_: Editor, contributor, owner
 A read-only user accessing media galleries and downloading content via explicit user access or public links.
 _Avoid_: Guest, consumer
 
+**Group**:
+A named collection of users managed by an Admin, allowing members to access shared folders and media.
+_Avoid_: Team, workspace, organization, role
+
 **Raw Media Store**:
 The primary bulk storage volume hosted on the secondary hard drive (`/mnt/storage`) holding original full-resolution files.
 _Avoid_: Bulk drive, archive disk
