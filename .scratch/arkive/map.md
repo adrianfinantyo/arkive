@@ -25,9 +25,8 @@ A complete technical specification and architecture blueprint for **Arkive**, de
 
 ## Not yet specified
 
-- **On-the-fly Streaming Zip Archives**: Zero-temp-file streaming zip generator for batch downloads directly from HDD to HTTP response body.
-- **REST API Specification**: Contract definition between Go backend and SvelteKit frontend for galleries, albums, auth, and link sharing.
-- **User Invitation & Account Recovery**: Low-overhead onboarding flow for non-technical community users without complex SMTP requirements.
+- **Client Offline Synchronization**: Queueing PWA client actions (favorites, tags, album assignments) in IndexedDB during network loss and replaying upon reconnect.
+- **Hardware Telemetry Alerting & Webhooks**: Lightweight notifications (Telegram bot, Gotify, ntfy) for drive health degradation, S.M.A.R.T. alerts, or backup failures.
 
 ## Out of scope
 
