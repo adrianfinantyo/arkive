@@ -27,10 +27,15 @@ A complete technical specification and architecture blueprint for **Arkive**, de
 - [[11] User Onboarding, Invitations & Account Recovery](file:///home/adrian/adrian-dev/arkive/.scratch/arkive/issues/11-user-invitation-and-account-recovery.md): Implement tokenized invitation links with role/group pre-assignment; establish a three-tier SMTP-free recovery model (Admin reset links, offline emergency recovery keys, and host CLI command); auto-bootstrap initial Admin via a permanently locking `/setup` wizard; manage 30-day sliding sessions in Valkey with instant revocation.
 - [[12] Hard Drive Health & Lifespan Monitoring (S.M.A.R.T.)](file:///home/adrian/adrian-dev/arkive/.scratch/arkive/issues/12-drive-health-smart-lifespan-monitoring.md): Preserve drive spin-down via `smartctl -n standby` queries with SSD cache fallback; decouple host block access via an atomic JSON state file on SSD, keeping containers unprivileged; evaluate health using three deterministic tiers and human operational age.
 
+## Active tickets
+
+- [[13] Client Offline Synchronization & Action Replay](file:///home/adrian/adrian-dev/arkive/.scratch/arkive/issues/13-client-offline-synchronization.md): Queueing PWA client actions (favorites, tags, album assignments) in IndexedDB during network loss and replaying upon reconnect.
+- [[14] Hardware Telemetry Alerting & Webhooks](file:///home/adrian/adrian-dev/arkive/.scratch/arkive/issues/14-hardware-telemetry-alerting-webhooks.md): Outbound push notifications (Telegram bot, Gotify, ntfy) for drive degradation, high temperature, low disk space, and backup failures.
+- [[15] Google Drive-Style UI/UX & Layout Architecture](file:///home/adrian/adrian-dev/arkive/.scratch/arkive/issues/15-google-drive-ui-ux-layout-architecture.md): SvelteKit frontend layout hierarchy, 3-pane split view, breadcrumbs, list/grid dual view, right-side metadata inspector, and drag-and-drop interactions.
+
 ## Not yet specified
 
-- **Client Offline Synchronization**: Queueing PWA client actions (favorites, tags, album assignments) in IndexedDB during network loss and replaying upon reconnect.
-- **Hardware Telemetry Alerting & Webhooks**: Lightweight notifications (Telegram bot, Gotify, ntfy) for drive health degradation, S.M.A.R.T. alerts, or backup failures.
+- **Multi-language Localization (i18n)**: Translation string handling and locale routing in the embedded SvelteKit SPA.
 
 ## Out of scope
 
